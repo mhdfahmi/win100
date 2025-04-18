@@ -1,0 +1,69 @@
+/* Global Styles */
+.hero-section {
+    background-image: url('images/winkul5.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.product-card {
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.nav-item {
+    margin: 0 5px;
+}
+
+.active-nav {
+    font-weight: bold;
+    border-bottom: 2px solid #dc3545;
+}
+
+.history-img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Parts & Aksesoris Tabs */
+.parts-tabs .nav-link {
+    color: #495057;
+    font-weight: 500;
+}
+
+.parts-tabs .nav-link.active {
+    color: #dc3545;
+    font-weight: bold;
+    background-color: transparent;
+    border-bottom: 3px solid #dc3545;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 300px;
+    }
+    
+    .history-img {
+        height: 200px;
+        margin-bottom: 20px;
+    }
+}

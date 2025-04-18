@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HONDA WIN 100 INDONESIA - Input Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-motorcycle me-2"></i>HONDA WIN 100 INDONESIA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html" id="homeMenu">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="jualmotor.html" id="jualBeliMenu">Jual Beli Motor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="spareparts.html" id="partsMenu">Parts & Aksesoris</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html" id="sejarahMenu">Sejarah</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active-nav" href="form.html" id="inputDataMenu">Input Data</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="data.html" id="tabelDataMenu">Tabel Data</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-header bg-danger text-white">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h5 class="card-title mb-0">Form Input Data</h5>
+                            <a href="data.html" class="btn btn-sm btn-light">
+                                <i class="fas fa-list me-1"></i> Lihat Data
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form id="dataForm">
+                            <div class="mb-3">
+                                <label for="jenisData" class="form-label">Jenis Data</label>
+                                <select class="form-select" id="jenisData" required>
+                                    <option value="" selected disabled>Pilih Jenis Data</option>
+                                    <option value="motor">Motor</option>
+                                    <option value="sparepart">Sparepart</option>
+                                    <option value="aksesoris">Aksesoris</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="namaProduk" class="form-label">Nama Produk</label>
+                                <input type="text" class="form-control" id="namaProduk" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="harga" class="form-label">Harga (Rp)</label>
+                                    <input type="number" class="form-control" id="harga" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="lokasi" class="form-label">Lokasi</label>
+                                    <input type="text" class="form-control" id="lokasi">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="deskripsi" class="form-label">Deskripsi</label>
+                                <textarea class="form-control" id="deskripsi" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="gambar" class="form-label">Upload Gambar</label>
+                                <input class="form-control" type="file" id="gambar">
+                            </div>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="reset" class="btn btn-secondary me-md-2">Reset</button>
+                                <button type="submit" class="btn btn-danger">Simpan Data</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>HONDA WIN 100 INDONESIA</h5>
+                    <p>Komunitas dan Toko Online untuk Penggemar Honda Win 100</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Kontak Kami</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone me-2"></i> +62 123 4567 890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@hondawin100.id</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Ikuti Kami</h5>
+                    <a href="#" class="text-white me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <p class="mb-0">&copy; 2023 HONDA WIN 100 INDONESIA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                jenis: document.getElementById('jenisData').value,
+                nama: document.getElementById('namaProduk').value,
+                harga: document.getElementById('harga').value,
+                lokasi: document.getElementById('lokasi').value,
+                deskripsi: document.getElementById('deskripsi').value,
+                tanggal: new Date().toLocaleDateString()
+            };
+            
+            let existingData = JSON.parse(localStorage.getItem('hondaWinData')) || [];
+            existingData.push(formData);
+            localStorage.setItem('hondaWinData', JSON.stringify(existingData));
+            
+            alert('Data berhasil disimpan!');
+            window.location.href = 'data.html';
+        });
+
+        // Set active menu berdasarkan halaman yang sedang dibuka
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                if(link.getAttribute('href') === currentPage){
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+

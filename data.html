@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HONDA WIN 100 INDONESIA - Tabel Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-motorcycle me-2"></i>HONDA WIN 100 INDONESIA
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="jualmotor.html">Jual Beli Motor</a></li>
+                    <li class="nav-item"><a class="nav-link" href="spareparts.html">Parts & Aksesoris</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">Sejarah</a></li>
+                    <li class="nav-item"><a class="nav-link" href="form.html">Input Data</a></li>
+                    <li class="nav-item"><a class="nav-link active-nav" href="data.html">Tabel Data</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="fw-bold mb-0">Tabel Data Produk</h2>
+            <a href="form.html" class="btn btn-success">
+                <i class="fas fa-plus me-2"></i>Tambah Data
+            </a>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Cari data...">
+                    <button class="btn btn-danger" type="button" id="searchButton">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group">
+                    <label class="input-group-text" for="filterJenis">Filter:</label>
+                    <select class="form-select" id="filterJenis">
+                        <option value="semua">Semua Jenis</option>
+                        <option value="motor">Motor</option>
+                        <option value="sparepart">Sparepart</option>
+                        <option value="aksesoris">Aksesoris</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>No</th>
+                        <th>Jenis</th>
+                        <th>Nama Produk</th>
+                        <th>Harga</th>
+                        <th>Lokasi</th>
+                        <th>Tanggal Input</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="dataTableBody">
+                    <!-- Data akan diisi oleh JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+        <nav aria-label="Page navigation" class="mt-4">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1">Previous</a></li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Modal Edit -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editModalLabel">Edit Data Produk</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form id="editForm">
+              <input type="hidden" id="editIndex">
+              <div class="mb-3">
+                <label for="editJenis" class="form-label">Jenis</label>
+                <select class="form-select" id="editJenis" required>
+                  <option value="motor">Motor</option>
+                  <option value="sparepart">Sparepart</option>
+                  <option value="aksesoris">Aksesoris</option>
+                </select>
+              </div>
+              <div class="mb-3">
+                <label for="editNama" class="form-label">Nama Produk</label>
+                <input type="text" class="form-control" id="editNama" required>
+              </div>
+              <div class="mb-3">
+                <label for="editHarga" class="form-label">Harga</label>
+                <input type="number" class="form-control" id="editHarga" required>
+              </div>
+              <div class="mb-3">
+                <label for="editLokasi" class="form-label">Lokasi</label>
+                <input type="text" class="form-control" id="editLokasi">
+              </div>
+              <div class="mb-3">
+                <label for="editTanggal" class="form-label">Tanggal Input</label>
+                <input type="date" class="form-control" id="editTanggal" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>HONDA WIN 100 INDONESIA</h5>
+                    <p>Komunitas dan Toko Online untuk Penggemar Honda Win 100</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Kontak Kami</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-phone me-2"></i> +62 123 4567 890</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@hondawin100.id</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Jakarta, Indonesia</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Ikuti Kami</h5>
+                    <a href="#" class="text-white me-2"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="text-white me-2"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <p class="mb-0">&copy; 2023 HONDA WIN 100 INDONESIA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function displayData() {
+            const data = JSON.parse(localStorage.getItem('hondaWinData')) || [];
+            const tableBody = document.getElementById('dataTableBody');
+            const filter = document.getElementById('filterJenis').value;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            tableBody.innerHTML = '';
+
+            const filteredData = data.filter(item => {
+                const matchesFilter = filter === 'semua' || item.jenis === filter;
+                const matchesSearch = item.nama.toLowerCase().includes(searchTerm) || 
+                                    (item.deskripsi || '').toLowerCase().includes(searchTerm);
+                return matchesFilter && matchesSearch;
+            });
+
+            if (filteredData.length === 0) {
+                tableBody.innerHTML = `<tr><td colspan="7" class="text-center py-4">Tidak ada data yang ditemukan</td></tr>`;
+                return;
+            }
+
+            filteredData.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${index + 1}</td>
+                    <td>${item.jenis}</td>
+                    <td>${item.nama}</td>
+                    <td>Rp ${parseInt(item.harga).toLocaleString('id-ID')}</td>
+                    <td>${item.lokasi || '-'}</td>
+                    <td>${item.tanggal}</td>
+                    <td>
+                        <button class="btn btn-sm btn-warning me-1" onclick="editData(${index})">
+                            <i class="fas fa-edit"></i>
+                        </button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteData(${index})">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        function editData(index) {
+            const data = JSON.parse(localStorage.getItem('hondaWinData')) || [];
+            const item = data[index];
+            document.getElementById('editIndex').value = index;
+            document.getElementById('editJenis').value = item.jenis;
+            document.getElementById('editNama').value = item.nama;
+            document.getElementById('editHarga').value = item.harga;
+            document.getElementById('editLokasi').value = item.lokasi || '';
+            document.getElementById('editTanggal').value = item.tanggal;
+
+            const modal = new bootstrap.Modal(document.getElementById('editModal'));
+            modal.show();
+        }
+
+        document.getElementById('editForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const index = parseInt(document.getElementById('editIndex').value);
+            const data = JSON.parse(localStorage.getItem('hondaWinData')) || [];
+
+            data[index] = {
+                jenis: document.getElementById('editJenis').value,
+                nama: document.getElementById('editNama').value,
+                harga: document.getElementById('editHarga').value,
+                lokasi: document.getElementById('editLokasi').value,
+                tanggal: document.getElementById('editTanggal').value,
+                deskripsi: data[index].deskripsi || ''
+            };
+
+            localStorage.setItem('hondaWinData', JSON.stringify(data));
+            const modal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+            modal.hide();
+            displayData();
+            alert('Data berhasil diperbarui!');
+        });
+
+        function deleteData(index) {
+            if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+                const data = JSON.parse(localStorage.getItem('hondaWinData')) || [];
+                data.splice(index, 1);
+                localStorage.setItem('hondaWinData', JSON.stringify(data));
+                displayData();
+                alert('Data berhasil dihapus');
+            }
+        }
+
+        document.getElementById('filterJenis').addEventListener('change', displayData);
+        document.getElementById('searchButton').addEventListener('click', displayData);
+        document.getElementById('searchInput').addEventListener('keyup', function(e) {
+            if (e.key === 'Enter') displayData();
+        });
+
+        window.addEventListener('DOMContentLoaded', displayData);
+    </script>
+</body>
+</html>
+
+
